@@ -32,8 +32,32 @@ public class Sponge {
   }
 
   // Implement your solution here!
-  public static String spongeCase(String sentence) {
-    return null;
+  public static String spongeCase(String sentence) 
+  {
+    String[] wordArray = sentence.split(" ");
+    String newString = "";
+   
+    for(String word: wordArray)
+    {
+      word = word.toLowerCase();
+      String newWord = "";
+
+      for(int i = 0; i<word.length(); i++)
+      { 
+        if(i % 2 == 0)
+        {
+          newWord += word.charAt(i);
+        }
+        else
+        {
+          newWord += Character.toUpperCase(word.charAt(i));
+        }  
+      }
+      newString += newWord;
+      newString += " ";
+    }
+
+    return newString.substring(0,newString.length()-1);
   }
 
 
